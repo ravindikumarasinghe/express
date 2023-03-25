@@ -5,11 +5,11 @@ const app = express();
 // one application has one port.
 
 app.get('/api/users', (req, res)=>{
-    res.status(400).send({'msg':'Hello'});
+    res.send({'msg':'Hello Get'});
 });
 
 app.post('/api/users', (req, res)=>{
-    res.send('hello post');
+    res.send({'msg': 'Hello Post'});
 });
 
 app.get('/api/student', (req,res)=>{
