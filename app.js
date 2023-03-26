@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const morgan = require('morgan');
 const user = require('./routers/users');
 const student = require('./routers/student');
 
@@ -8,7 +9,8 @@ const student = require('./routers/student');
 
 // app.use(log);               // use middleweare
 // can use middleware any number of times
-app.use('/api/users',log, user);
+app.use(morgan('tiny'));
+app.use('/api/users', user);
 app.use('/api/student', student);
 
 
@@ -22,10 +24,13 @@ function log(req, res, next){
 }
 
 
-// not always the app will able to get the PORT:3000
-// get PORT from the environment
-console.log(process.env.PORT);
-// or else get 3000 as the port
+// // not always the app will able to get the PORT:3000
+// // get PORT from the environment
+// console.log(process.env.PORT);
+// // or else get 3000 as the port
+
+
+morgan('tiny');
 
 const port = process.env.PORT || 3000;
 
