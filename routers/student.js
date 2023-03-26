@@ -3,11 +3,11 @@ const router = express.Router();
 
 
 
-router.get('/api/student', (req,res)=>{
+router.get('/', (req,res)=>{
     res.send('Hello Student');
 });
 
-router.post('/api/student', (req, res)=>{
+router.post('/', (req, res)=>{
     res.send('Hello post from Student');
 });
 
