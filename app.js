@@ -1,24 +1,14 @@
 const express = require('express');
 const app = express();
+const user = require('./routers/users');
+const student = require('./routers/student');
 
 // port is use to identify the applications seperately. 
 // one application has one port.
 
-app.get('/api/users', (req, res)=>{
-    res.send({'msg':'Hello Get'});
-});
+app.use('/api/users', user);
+app.use('/api/student', student);
 
-app.post('/api/users', (req, res)=>{
-    res.send({'msg': 'Hello Post'});
-});
-
-app.get('/api/student', (req,res)=>{
-    res.send('Hello Student');
-});
-
-app.post('/api/student', (req, res)=>{
-    res.send('Hello post from Student');
-});
 
 // not always the app will able to get the PORT:3000
 // get PORT from the environment

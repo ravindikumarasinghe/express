@@ -1,13 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const user = require('./routers/user');
 
-app.use('/api/users', user);
 
+
+
+// create GET requests
 router.get('/', (req, res)=>{
     res.send({'msg':'Hello Get'});
 });
 
+
+// create POST requests
 router.post('/', (req, res)=>{
     res.send({'msg': 'Hello Post'});
 })
